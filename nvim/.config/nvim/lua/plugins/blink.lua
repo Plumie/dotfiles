@@ -24,7 +24,7 @@ return {
     },
     signature = { window = { border = "single" } },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "lsp", "path", "buffer" },
     },
   },
   opts_extend = { "sources.default" },

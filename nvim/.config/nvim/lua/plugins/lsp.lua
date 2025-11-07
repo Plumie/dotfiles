@@ -18,6 +18,9 @@ return {
         vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
         vim.keymap.set("n", "J", vim.diagnostic.open_float, opts)
+        vim.keymap.set("n", "<leader>dq", function()
+          vim.diagnostic.setqflist({ open = true })
+        end)
       end,
     })
 

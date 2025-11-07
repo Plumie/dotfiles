@@ -4,7 +4,6 @@ return {
   lazy = false,
   opts = {
     bigfile = {},
-    gh = {},
     indent = { animate = { enabled = false } },
     input = {},
     picker = {
@@ -44,7 +43,5 @@ return {
     { "gr", function() require("snacks").picker.lsp_references()end, nowait = true, desc = "References" },
     { "gI", function() require("snacks").picker.lsp_implementations()end, desc = "Goto Implementation" },
     { "gy", function() require("snacks").picker.lsp_type_definitions()end, desc = "Goto T[y]pe Definition" },
-    { "<leader>gi", function() require("snacks").picker.gh_issue({ state = "all" })end, desc = "GitHub Issues (all)" },
-    { "<leader>gp", function()require("snacks").picker.gh_pr({ state = "all" })end, desc = "GitHub Pull Requests (all)" },
   },
 }
