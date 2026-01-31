@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.have_nerd_font = true
 vim.opt.backspace = "start,eol,indent"
-vim.opt.mouse = ""
+-- vim.opt.mouse = ""
 
 -- Line numbers
 vim.opt.number = true
@@ -20,7 +20,8 @@ vim.opt.splitkeep = "cursor"
 vim.opt.showcmd = true
 vim.opt.cmdheight = 0
 vim.opt.pumheight = 2
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 8 
+vim.opt.sidescrolloff = 8
 vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.o.winborder = "single"

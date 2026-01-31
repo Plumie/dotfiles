@@ -6,11 +6,8 @@ return {
   opts = {
     options = {
       theme = function()
-        local theme = require("lualine.themes.palenight")
-        theme.normal.b.bg = nil
+        local theme = require("lualine.themes.tokyonight")
         theme.normal.c.bg = nil
-        theme.visual.b.bg = nil
-        theme.insert.b.bg = nil
         return theme
       end,
       component_separators = { left = " ", right = " " },

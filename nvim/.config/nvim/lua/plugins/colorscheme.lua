@@ -6,12 +6,18 @@ return {
       sidebars = "transparent",
       floats = "transparent",
     },
+    on_highlights = function(hl, c)
+      hl.Visual = {
+        bg = c.fg,
+        fg = c.black
+      }
+    end
   },
   init = function()
-    vim.cmd([[colorscheme tokyonight-night]])
+    vim.cmd([[colorscheme tokyonight-storm]])
     vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
     vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "white" })
     vim.api.nvim_set_hl(0, "WinSeparator", { fg = "white" })
-    vim.cmd[[hi Visual guibg=#43589C gui=none]]
+    vim.api.nvim_set_hl(0, "StatusLine", { guibg = NONE, ctermbg = NONE })
   end,
 }
