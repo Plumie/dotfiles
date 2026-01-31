@@ -1,0 +1,15 @@
+font-family = "GeistMono Nerd Font"
+font-size = 20
+background-blur = 20
+background-opacity = 0.96
+background = #23283D
+window-padding-x = 10
+window-padding-y = 10
+macos-titlebar-style = hidden
+font-thicken = true
+copy-on-select = true
+mouse-hide-while-typing = true
+macos-non-native-fullscreen=visible-menu
+macos-option-as-alt = true
+window-save-state = always
+theme = Tokyonight Storm
