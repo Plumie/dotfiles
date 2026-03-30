@@ -1,6 +1,6 @@
 return {
   "saghen/blink.cmp",
-  version = "1.*",
+  version = '1.*',
   opts = {
     keymap = {
       ["<S-Tab>"] = { "select_prev", "fallback" },

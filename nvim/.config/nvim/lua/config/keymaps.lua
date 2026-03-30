@@ -20,3 +20,9 @@ vim.keymap.set("n", "<leader>w", ":silent! w!<CR>", opts)
 
 -- Search
 vim.keymap.set("n", "<Esc>", ":noh<CR>", opts)
+
+-- Prevent snipper behavior
+vim.keymap.set({'i', 's'}, '<ESC>', function()
+  if vim.snippet then vim.snippet.stop() end
+  return '<ESC>'
+end, { expr = true })

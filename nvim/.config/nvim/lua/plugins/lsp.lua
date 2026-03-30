@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   dependencies = {
     {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       config = true,
     },
     "williamboman/mason-lspconfig.nvim",
@@ -14,6 +14,11 @@ return {
       group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
       callback = function(event)
         local opts = { buffer = event.buf }
+        vim.keymap.set("n", "K", function()
+          vim.lsp.buf.hover({
+            border = "rounded",
+          })
+        end, opts)
         vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
@@ -24,14 +29,9 @@ return {
       end,
     })
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-      vim.lsp.handlers.hover,
-      { border = "rounded" }
-    )
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-      vim.lsp.handlers.signature_help,
-      { border = "rounded" }
-    )
+    vim.diagnostic.config({
+      float = { border = "rounded" },
+    })
 
     local servers = {
       lua_ls = {
@@ -56,6 +56,5 @@ return {
         end,
       },
     })
-
   end,
 }
