@@ -3,7 +3,7 @@ return {
   keys = {
     { "s", function()
       require("pounce").pounce({})
-    end, desc = "Pounce to the match" },
+    end },
   },
   init = function()
     vim.cmd([[

@@ -12,6 +12,6 @@ return {
   },
   lazy = false,
   keys = {
-    { "<leader>eo", "<cmd>Oil<CR>", desc = "Open oil" },
+    { "<leader>eo", "<cmd>Oil<CR>" },
   },
 }

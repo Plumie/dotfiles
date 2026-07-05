@@ -1,7 +1,14 @@
 return {
   "saghen/blink.cmp",
-  version = '1.*',
+  version = "*",
+  dependencies = { "saghen/blink.lib" },
+  build = "cargo build --release",
   opts = {
+    completion = {
+      menu = { border = "" },
+      documentation = { window = { border = "" } },
+    },
+    signature = { window = { border = "" } },
     keymap = {
       ["<S-Tab>"] = { "select_prev", "fallback" },
       ["<Tab>"] = { "select_next", "fallback" },

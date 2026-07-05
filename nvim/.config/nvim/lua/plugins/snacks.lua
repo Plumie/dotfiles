@@ -35,13 +35,7 @@ return {
     statuscolumn = {},
   },
   keys = {
-    { "<leader>p", function() require("snacks").picker.files()end, desc = "Smart search" },
-    { "<leader>f", function() require("snacks").picker.grep()end, desc = "Grep" },
-    { "<leader>t", function() require("snacks").picker.todo_comments() end },
-    { "gd", function() require("snacks").picker.lsp_definitions() end, desc = "Goto Definition" },
-    { "gD", function() require("snacks").picker.lsp_declarations() end, desc = "Goto Declaration" },
-    { "gr", function() require("snacks").picker.lsp_references() end, desc = "References" },
-    { "gI", function() require("snacks").picker.lsp_implementations() end, desc = "Goto Implementation" },
-    { "gy", function() require("snacks").picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+    { "gd", function() require("snacks").picker.lsp_definitions() end },
+    { "gt", function() require("snacks").picker.lsp_type_definitions() end },
   },
 }

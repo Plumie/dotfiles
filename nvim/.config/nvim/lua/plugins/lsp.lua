@@ -15,22 +15,15 @@ return {
       callback = function(event)
         local opts = { buffer = event.buf }
         vim.keymap.set("n", "K", function()
-          vim.lsp.buf.hover({
-            border = "rounded",
-          })
+          vim.lsp.buf.hover()
+        end, opts)
+        vim.keymap.set("n", "J", function()
+          vim.diagnostic.open_float()
         end, opts)
         vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
-        vim.keymap.set("n", "J", vim.diagnostic.open_float, opts)
-        vim.keymap.set("n", "<leader>dq", function()
-          vim.diagnostic.setqflist({ open = true })
-        end)
       end,
-    })
-
-    vim.diagnostic.config({
-      float = { border = "rounded" },
     })
 
     local servers = {
@@ -43,18 +36,18 @@ return {
       },
     }
 
-    local ensure_installed = vim.tbl_keys(servers or {})
-
     require("mason").setup()
-    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-    require("mason-lspconfig").setup({
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
-          require("lspconfig")[server_name].setup(server)
-        end,
-      },
+    require("mason-tool-installer").setup({
+      ensure_installed = vim.tbl_keys(servers),
     })
+
+    vim.lsp.config("*", {
+      capabilities = require("blink.cmp").get_lsp_capabilities(),
+    })
+    for server, config in pairs(servers) do
+      vim.lsp.config(server, config)
+    end
+
+    require("mason-lspconfig").setup()
   end,
 }

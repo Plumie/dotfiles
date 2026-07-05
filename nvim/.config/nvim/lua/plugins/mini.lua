@@ -2,7 +2,12 @@ return {
   "nvim-mini/mini.nvim",
   version = false,
   dependencies = {
-    "JoosepAlviste/nvim-ts-context-commentstring",
+    {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      opts = {
+        enable_autocmd = false,
+      },
+    },
   },
   config = function()
     require("mini.icons").setup()
