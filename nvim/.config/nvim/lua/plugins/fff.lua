@@ -4,9 +4,11 @@ return {
     require("fff.download").download_or_build_binary()
   end,
   opts = {
-    prompt = "✨ ",
+    prompt = "",
+    title = 'Search',
     layout = {
       prompt_position = "top",
+      border = "bold"
     },
     keymaps = {
       move_up = { "<Up>", "<S-Tab>" },

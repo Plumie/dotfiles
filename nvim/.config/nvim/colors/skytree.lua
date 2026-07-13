@@ -14,10 +14,10 @@ local c = {
   bg_float   = "#1f2335",
   bg_visual  = "#2e3c64",
   bg_search  = "#3d59a1",
-  line       = "#1e2030",
+  line       = "#414868",
   comment    = "#565f89",
-  gutter     = "#3b4261",
-  border     = "#414868",
+  gutter     = "#565f89",
+  border     = "#a9b1d6",
   none       = "NONE",
 }
 
@@ -66,7 +66,7 @@ hl("NonText",       { fg = c.gutter })
 hl("Whitespace",    { fg = c.gutter })
 hl("SpecialKey",    { fg = c.gutter })
 hl("Directory",     { fg = c.blue })
-hl("Title",         { fg = c.blue, bold = true })
+hl("Title",         { fg = c.blue, bg = c.bg_float, bold = true })
 hl("ErrorMsg",      { fg = c.red })
 hl("WarningMsg",    { fg = c.yellow })
 hl("MoreMsg",       { fg = c.blue })
@@ -181,3 +181,9 @@ hl("OilDir",     { fg = c.blue, bold = true })
 hl("OilDirIcon", { fg = c.blue })
 hl("OilLink",    { fg = c.cyan })
 hl("OilFile",    { fg = c.fg })
+
+hl("PounceMatch",     { fg = c.black, bg = c.cyan })
+hl("PounceGap", { fg = c.blue })
+hl("PounceAccept",    { fg = c.black, bg = c.red, bold = true })
+hl("PounceAcceptBest",    { fg = c.black, bg = c.red, bold = true })
+hl("PounceCursor",    { fg = c.fg })

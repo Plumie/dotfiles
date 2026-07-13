@@ -21,6 +21,19 @@ vim.keymap.set("n", "<leader>w", ":silent! w!<CR>", opts)
 -- Search
 vim.keymap.set("n", "<Esc>", ":noh<CR>", opts)
 
+-- Move windows around
+local function move_win(dir)
+  return function()
+    vim.cmd.wincmd(dir)
+    require("incline").refresh()
+  end
+end
+
+vim.keymap.set("n", "<leader>vh", move_win("H"))
+vim.keymap.set("n", "<leader>vj", move_win("J"))
+vim.keymap.set("n", "<leader>vk", move_win("K"))
+vim.keymap.set("n", "<leader>vl", move_win("L"))
+
 -- Prevent snippet behavior on Esc
 vim.keymap.set({ "i", "s" }, "<Esc>", function()
   if vim.snippet then vim.snippet.stop() end

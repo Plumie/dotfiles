@@ -5,7 +5,6 @@ return {
   opts = {
     bigfile = {},
     indent = { animate = { enabled = false } },
-    input = {},
     picker = {
       win = {
         input = {
@@ -32,7 +31,6 @@ return {
         })
       end,
     },
-    statuscolumn = {},
   },
   keys = {
     { "gd", function() require("snacks").picker.lsp_definitions() end },

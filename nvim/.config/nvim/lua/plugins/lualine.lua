@@ -1,8 +1,5 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
   opts = function()
     local function hl_fg(name)
       local hl = vim.api.nvim_get_hl(0, { name = name, link = false })

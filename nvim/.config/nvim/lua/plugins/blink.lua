@@ -5,10 +5,14 @@ return {
   build = "cargo build --release",
   opts = {
     completion = {
-      menu = { border = "" },
+      menu = {
+        border = "",
+      },
       documentation = { window = { border = "" } },
     },
-    signature = { window = { border = "" } },
+    signature = { window = {
+      border = "",
+    } },
     keymap = {
       ["<S-Tab>"] = { "select_prev", "fallback" },
       ["<Tab>"] = { "select_next", "fallback" },
